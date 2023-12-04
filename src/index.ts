@@ -1,14 +1,14 @@
 #! /usr/bin/env node
 import chalk from 'chalk';
 
-console.clear();
-
 if (process.argv[2] === '-v' || process.argv[2] === '--version') {
     const __dirname = (await import('path')).resolve();
     const info = JSON.parse((await import('fs')).readFileSync(`${__dirname}/package.json`, 'utf8'));
     console.log(info.version);
     process.exit(0);
 }
+
+console.clear();
 
 const getTimeFromChristmas = () => {
     const now = new Date();
@@ -72,4 +72,5 @@ const display = () => {
     count++;
 };
 
+display();
 setInterval(display, 1000);

@@ -1,12 +1,12 @@
 #! /usr/bin/env node
 import chalk from 'chalk';
-console.clear();
 if (process.argv[2] === '-v' || process.argv[2] === '--version') {
     const __dirname = (await import('path')).resolve();
     const info = JSON.parse((await import('fs')).readFileSync(`${__dirname}/package.json`, 'utf8'));
     console.log(info.version);
     process.exit(0);
 }
+console.clear();
 const getTimeFromChristmas = () => {
     const now = new Date();
     let christmas = new Date(now.getFullYear(), 11, 25);
@@ -67,4 +67,5 @@ const display = () => {
     console.log(chalk.white.bold(`Time until ${chalk.redBright('Christmas')}: ${timeUntilChristmas()} \n\n(by @alessandrofoglia07)`));
     count++;
 };
+display();
 setInterval(display, 1000);
