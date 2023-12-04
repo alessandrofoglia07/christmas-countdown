@@ -1,0 +1,47 @@
+{
+    "name": "christmas-countdown",
+    "version": "1.0.0",
+    "description": "CLI to show how much time is left to Christmas",
+    "main": "bin/index.js",
+    "funding": {
+        "type": "individual",
+        "url": "https://www.paypal.com/paypalme/AlessandroFoglia07"
+    },
+    "homepage": "https://github.com/alessandrofoglia07/christmas-countdown",
+    "scripts": {
+        "build": "tsc -p .",
+        "test": "npm run build && npm i -g && npx christmas-countdown",
+        "prepublishOnly": "npm run build",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "files": [
+        "bin"
+    ],
+    "bin": {
+        "christmas-countdown": "bin/index.js"
+    },
+    "type": "module",
+    "keywords": [
+        "node",
+        "cli",
+        "christmas",
+        "countdown",
+        "time"
+    ],
+    "author": "alessandrofoglia07",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/eslint": "^8.44.8",
+        "@types/node": "^20.10.3",
+        "@typescript-eslint/eslint-plugin": "^6.13.1",
+        "eslint": "^8.55.0",
+        "prettier": "^3.1.0",
+        "typescript": "^5.3.2"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0"
+    }
+}
