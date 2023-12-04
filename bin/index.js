@@ -1,8 +1,9 @@
 #! /usr/bin/env node
 import chalk from 'chalk';
-import info from '../package.json' assert { type: 'json' };
 console.clear();
 if (process.argv[2] === '-v' || process.argv[2] === '--version') {
+    const __dirname = (await import('path')).resolve();
+    const info = JSON.parse((await import('fs')).readFileSync(`${__dirname}/package.json`, 'utf8'));
     console.log(info.version);
     process.exit(0);
 }

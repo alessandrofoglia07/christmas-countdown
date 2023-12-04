@@ -1,6 +1,6 @@
 {
     "name": "christmas-countdown",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "CLI to show how much time is left to Christmas",
     "main": "bin/index.js",
     "funding": {
