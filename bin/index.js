@@ -57,7 +57,7 @@ const display = () => {
     const time = getTimeFromChristmas();
     console.log(christmasText(`Merry Christmas! \n`, count));
     const timeUntilChristmas = () => {
-        if (time.date.getFullYear() === new Date().getFullYear() && time.date.getMonth() === new Date().getMonth() && time.date.getDate() === new Date().getDate()) {
+        if (time.days >= 365) {
             return christmasText('✨ Today is Christmas! Happy holidays! ✨', count);
         }
         else {
